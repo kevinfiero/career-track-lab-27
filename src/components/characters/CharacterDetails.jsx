@@ -7,9 +7,10 @@ export default class DetailPage extends Component {
 
   fetchCharacter = async() => {
     // eslint-disable-next-line max-len
-    const response = await fetch.get(`https://last-airbender-api.herokuapp.com/api/v1/characters/${this.props.match.params.id}`);
-    console.log(response);
-    await this.setState({ character: response });
+    const response = await fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters/${this.props.match.params.id}`);
+    const res = await response.json();
+    console.log(res);
+    this.setState({ character: res });
   }
 
   componentDidMount = async() => {
@@ -19,7 +20,6 @@ export default class DetailPage extends Component {
   render() {
     return (
       <>
-        <h1>hello</h1>
         <figure>
           <img src={this.state.character.photoUrl} />
           <figcaption>{this.state.character.name}</figcaption>

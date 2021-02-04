@@ -23,8 +23,8 @@ const CharacterList = ({ characters }) => {
 CharacterList.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
+    photoUrl: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired
   })).isRequired
 };
 

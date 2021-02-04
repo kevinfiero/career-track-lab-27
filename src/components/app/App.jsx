@@ -11,10 +11,14 @@ export default function App() {
   return (
     <div>
       <Router>
-        <AllCharacters />
         <Switch>
           <Route 
-            path="/character" 
+            path="/" 
+            exact
+            render={(routerProps) => <AllCharacters {...routerProps} />} 
+          />
+          <Route 
+            path="/character/:id" 
             exact
             render={(routerProps) => <CharacterDetails {...routerProps} />} 
           />
