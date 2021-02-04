@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Character = ({ name, image, id }) => (
-  <Link to={`/character?id=${id}`}>
+  <Link to={`/character/${id}`}>
     <figure>
       <img src={image} />
       <figcaption>{name}</figcaption>
